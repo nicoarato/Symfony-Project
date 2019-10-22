@@ -3,5 +3,6 @@ index:
     controller: App\Controller\HomeController::index
 
 animales:
-    path: /animales
+    path: /animales/{nombre}
     controller: App\Controller\HomeController::animales
+    defaults: {nombre: 'Ingresa tu nombre'}

@@ -8,5 +8,9 @@ animales:
     defaults: {nombre: 'Ingresa tu nombre', apellido: 'Ingresa el apellido'}
     methods: [POST, GET]
     requirements:
-        nombre: '[a-zA-Z]+'
-        apellido: '[a-zA-Z]+'
+        nombre: '[a-zA-Z ]+'
+        apellido: '[a-zA-Z ]+'
+
+redirigir:
+    path: /redirigir
+    controller: App\Controller\HomeController::redirigir

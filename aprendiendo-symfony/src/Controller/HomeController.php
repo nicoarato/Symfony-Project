@@ -27,4 +27,15 @@ class HomeController extends AbstractController
             'apellido' => $apellido
         ]);
     }
+    
+    public function redirigir(){
+        //return $this->redirectToRoute('index');
+
+        return $this->redirectToRoute('animales', [
+            'nombre' => 'Juan cruz',
+            'apellido' => 'Lopez'
+        ]);
+        
+//        return $this->redirect('http://www.udemy.com');
+    }
 }

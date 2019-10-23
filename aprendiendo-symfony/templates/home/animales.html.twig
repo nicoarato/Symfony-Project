@@ -4,12 +4,19 @@
 
 {% block cabecera %}
     {{parent()}} <!-- hereda lo que tenia el bloque- imprime lo que tenia el bloque-->
-    <h1>Animales</h1>
+    <h2>{{ title }}</h2>
 {% endblock %}
 
 {% block contenido %}
+    {#
     <h1>{{ title }}</h1>
     <!-- los parametro opcionales se cargan en routes -->
     <h2> Tu nombre es: {{ nombre }}</h2>
     <h3> Tu apellido es: {{ apellido }}</h3>
+    #}
+    
+    {# Creando variables#}
+    {% set perro = 'Pastor alemán'%}
+    <h4>{{ perro }}</h4>
+    
 {% endblock %}

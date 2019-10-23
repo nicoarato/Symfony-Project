@@ -31,4 +31,45 @@
     
     {{ aves.tipo ~ '-' ~aves.raza }}
     
+    {# Condicionales#}
+    
+    {% if aves.tipo == 'paloma' %}
+        <p> <strong>
+                Cuidado una paloma asesina
+            </strong>
+        </p>
+    {% else %}
+        <p> <strong>
+                No hay palomas.
+            </strong>
+        </p>
+    {% endif %}
+    
+    {# Bucles #}
+    
+    {% if animales|length >=0 %}
+        <ul>
+            {% for animal in animales %}
+                <li> {{ animal }}</li>
+            
+            {% endfor %}
+        </ul>
+
+    {% endif %}
+    
+    
+    
+    {% for i in 0..animales|length %}
+               {{ i }}
+               {% if i == animales|length %}
+                   <hr>
+               {% endif %}
+    {% endfor %}
+    
+    {% for i in 0..10 %}
+               {{ i }}
+               
+    {% endfor %}
+        
+        
 {% endblock %}

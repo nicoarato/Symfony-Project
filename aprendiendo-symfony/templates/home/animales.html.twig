@@ -51,7 +51,9 @@
         <ul>
             {% for animal in animales %}
                 <li> {{ animal }}</li>
-            
+                {% if animal starts with 'p' %}
+                    <h4> Empieza con p</h4>
+                {% endif %}
             {% endfor %}
         </ul>
 
@@ -70,6 +72,9 @@
                {{ i }}
                
     {% endfor %}
+    
+    {{ include('partials/funciones.html.twig', {'nombre': 'Nicolas Arato'}) }}
+    
         
         
 {% endblock %}

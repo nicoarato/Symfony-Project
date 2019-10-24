@@ -19,3 +19,8 @@
 
 {{ dump(email|trim|upper|lower) }}
 {{email}}
+
+<h4> Extensiones personalizadas </h4>
+
+{{ function_multiplicar(5)|raw }}
+{{ 12|filter_multiplicar|raw }}

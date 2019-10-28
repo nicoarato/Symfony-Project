@@ -37,4 +37,21 @@ class AnimalController extends AbstractController
         
         return new Response('El Animal guardado tiene el id ' . $animal->getId());
     }
+    
+    public function animal($id){
+        
+        //cargar el repositorio
+        $animal_repo = $this->getDoctrine()->getRepository(Animal::class);
+        
+        //hacer la consulta
+        $animal = $animal_repo->find($id);
+        //comprobar el resultado
+        if(!$animal){
+            $message = 'El animal no existe';
+        }else{
+            $message = 'Tu animal elegido es: ' . $animal->getTipo() . ' - '. $animal->getRaza();
+        }
+        
+        return new Response($message);
+    }
 }

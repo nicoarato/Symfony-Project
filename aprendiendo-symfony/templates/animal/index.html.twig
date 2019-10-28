@@ -11,10 +11,12 @@
 <div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/Symfony-Project/aprendiendo-symfony/src/Controller/AnimalController.php'|file_link(0) }}">src/Controller/AnimalController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/Symfony-Project/aprendiendo-symfony/templates/animal/index.html.twig'|file_link(0) }}">templates/animal/index.html.twig</a></code></li>
-    </ul>
+    {{ dump(animales) }}
+    {% for animal in animales %}
+        <ul>
+            <li>{{animal.tipo}}</li>
+        </ul>
+        
+    {% endfor %}
 </div>
 {% endblock %}

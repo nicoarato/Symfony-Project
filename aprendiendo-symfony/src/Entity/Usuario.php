@@ -5,39 +5,51 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\UsuarioRepository")
+ * Usuario
+ *
+ * @ORM\Table(name="usuario")
+ * @ORM\Entity
  */
 class Usuario
 {
     /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
-    
+
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=255, nullable=false)
      */
-    
     private $nombre;
+
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string
+     *
+     * @ORM\Column(name="apellido", type="string", length=255, nullable=false)
      */
-    
     private $apellido;
+
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255, nullable=false)
      */
-    
     private $email;
+
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=255, nullable=false)
      */
     private $password;
 
-
-    public function getId()
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -89,4 +101,6 @@ class Usuario
 
         return $this;
     }
+
+
 }

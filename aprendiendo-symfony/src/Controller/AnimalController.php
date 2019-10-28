@@ -16,6 +16,15 @@ class AnimalController extends AbstractController
         
         $animales = $animal_repo->findAll();
         
+        //$animal = $animal_repo->findOneBy([
+        $animal = $animal_repo->findBy([
+            'raza' => 'mamifero'
+        ],[
+            'id' => 'DESC'
+        ]);
+        
+        var_dump($animal);
+        
         return $this->render('animal/index.html.twig', [
             'controller_name' => 'AnimalController',
             'animales' => $animales,

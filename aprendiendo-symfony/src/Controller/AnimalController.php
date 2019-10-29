@@ -52,7 +52,12 @@ class AnimalController extends AbstractController
         $prepare->execute();
         $resultset = $prepare->fetchAll();
         
-        var_dump($resultset);
+        //var_dump($resultset);
+        
+        //Repository
+        $animals = $animal_repo->getAnimalsOrderId('DESC');
+        var_dump($animals);
+        
         
         return $this->render('animal/index.html.twig', [
             'controller_name' => 'AnimalController',

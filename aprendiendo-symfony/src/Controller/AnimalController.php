@@ -33,6 +33,16 @@ class AnimalController extends AbstractController
                              ->getQuery();
         $resultset = $query->execute();
         
+        
+        
+        //DQL Doctrine Query Lenguage
+        $em = $this->getDoctrine()->getManager();
+        //$dql = "SELECT a FROM App\Entity\Animal a WHERE a.raza = 'mamifero'";
+        $dql = "SELECT a FROM App\Entity\Animal a ORDER BY a.id DESC";
+        
+        $query_dql = $em->createQuery($dql);
+        $resultset = $query_dql->execute();
+        
         var_dump($resultset);
         
         return $this->render('animal/index.html.twig', [

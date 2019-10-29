@@ -43,6 +43,15 @@ class AnimalController extends AbstractController
         $query_dql = $em->createQuery($dql);
         $resultset = $query_dql->execute();
         
+        
+        //SQL 
+        
+        $connection = $this->getDoctrine()->getConnection();
+        $sql = 'SELECT * FROM animales ORDER BY id DESC';
+        $prepare = $connection->prepare($sql);
+        $prepare->execute();
+        $resultset = $prepare->fetchAll();
+        
         var_dump($resultset);
         
         return $this->render('animal/index.html.twig', [

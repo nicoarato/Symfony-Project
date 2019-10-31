@@ -6,9 +6,27 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use App\Entity\Animal;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+
 
 class AnimalController extends AbstractController
 {
+    public function crearAnimal(){
+        $animal = new Animal();
+        $form = $this->createFormBuilder($animal)
+                     ->setAction($this->generateUrl('animal_save'))
+                     ->setMethod('POST')
+                     ->add('tipo', TextType::class)
+                     ->add('color', TextType::class)
+                     ->add('raza', TextType::class)
+                     ->add('submit', SubmitType::class)
+                ->getForm();
+        return $this->render('animal/crear-animal.html.twig',[
+            'form' => $form->createView()
+        ]);
+        
+    }
 
     public function index()
     {

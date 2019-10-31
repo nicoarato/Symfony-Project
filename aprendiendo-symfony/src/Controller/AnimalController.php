@@ -17,10 +17,15 @@ class AnimalController extends AbstractController
         $form = $this->createFormBuilder($animal)
                      ->setAction($this->generateUrl('animal_save'))
                      ->setMethod('POST')
-                     ->add('tipo', TextType::class)
+                     ->add('tipo', TextType::class, [
+                         'label' => 'Tipo de animal'
+                         ])
                      ->add('color', TextType::class)
                      ->add('raza', TextType::class)
-                     ->add('submit', SubmitType::class)
+                     ->add('submit', SubmitType::class,[
+                         'label' => 'Crear animal',
+                         'attr' => ['class' => 'btn']
+                     ])
                 ->getForm();
         return $this->render('animal/crear-animal.html.twig',[
             'form' => $form->createView()

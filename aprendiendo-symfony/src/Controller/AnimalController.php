@@ -31,7 +31,7 @@ class AnimalController extends AbstractController
                 ->getForm();
         
         $form->handleRequest($request); //coloca en $animal los datos del form
-        if($form->isSubmitted()){  //verifica si due enviado
+        if($form->isSubmitted() && $form->isValid()){  //verifica si due enviado
             $em = $this->getDoctrine()->getManager();
             $em->persist($animal);
             $em->flush();

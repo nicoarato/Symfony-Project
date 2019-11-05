@@ -25,3 +25,7 @@ created_at  datetime,
 CONSTRAINT pk_tasks PRIMARY KEY(id),
 CONSTRAINT fk_task_user FOREIGN KEY(user_id) REFERENCES users(id)
 )ENGINE=InnoDb;
+
+INSERT INTO users VALUES('null','ROLE_USER','Julio','Rojas','julio@julio.com','password', CURDATE());
+INSERT INTO users VALUES('null','ROLE_USER','Maria','Sanders','maria@maria.com','password', CURDATE());
+INSERT INTO users VALUES('null','ROLE_USER','Beto','Cuevas','beto@beto.com','password', CURDATE());

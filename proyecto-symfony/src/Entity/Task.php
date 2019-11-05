@@ -57,9 +57,9 @@ class Task
     private $createdAt;
 
     /**
-     * @var \Users
+     * @var \User
      *
-     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inverseBy="tasks")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      * })

@@ -26,7 +26,7 @@ class UserController extends AbstractController
         $form->handleRequest($request);
         
         //compruebo si envia
-        if($form->isSubmitted()){
+        if($form->isSubmitted() && $form->isValid()){
             //modifico objeto
             $user->setRole('ROLE_USER');
         

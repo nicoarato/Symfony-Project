@@ -7,6 +7,8 @@ body{
     clear: both;
 }
 
+
+
 #menu{
     margin: 0px;
     padding: 0px;
@@ -44,7 +46,11 @@ body{
     transition: all 300ms;
 }
 
-
+#menu li.right{
+    float: right;
+    border-left: 1px solid #ccc;
+    border-right: 0px;
+}
 
 .example-wrapper { 
     margin: 1em auto; 

@@ -1,16 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Crear Tarea{% endblock %}
+{% block title %}
+    {% if edit is defined %}
+            <h1>Editar Tarea</h1>
+        {% else %}
+            <h1>Crear Tarea</h1>
+        {% endif %}
+{% endblock %}
 
 {% block body %}
 
 
-<div class="example-wrapper">
-    <h2>Crear Tarea</h2>
+    <div class="example-wrapper">
+
+        {% if edit is defined %}
+            <h2>Editar Tarea</h2>
+        {% else %}
+            <h2>Crear Tarea</h2>
+        {% endif %}
         {{ form_start(form)}}
         {{ form_widget(form)}}
         {{ form_end(form)}}
-   
-    
-</div>
+
+
+    </div>
 {% endblock %}
